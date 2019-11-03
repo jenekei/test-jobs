@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7bK-6N-ivZ">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--WebVC-->
+        <scene sceneID="ufl-no-aBD">
+            <objects>
+                <viewController storyboardIdentifier="GerlerWeb" id="7bK-6N-ivZ" customClass="webVC" customModule="WebSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qro-tj-aVW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PUB-q3-b9h">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <navigationItem title="Github" id="NFR-DW-vg7"/>
+                                </items>
+                            </navigationBar>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Qyu-vQ-noy">
+                                <rect key="frame" x="0.0" y="64" width="320" height="2"/>
+                            </progressView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bUo-II-v50">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem enabled="NO" title="&lt;" id="oU9-Ka-tOn">
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="backWithSender:" destination="7bK-6N-ivZ" id="USI-H0-tjf"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="cCc-hk-rFh"/>
+                                    <barButtonItem enabled="NO" title="&gt;" id="ZPd-r5-mpo">
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="forwardWithSender:" destination="7bK-6N-ivZ" id="76h-6p-gyZ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="crk-KT-Ucr"/>
+                                    <barButtonItem enabled="NO" systemItem="refresh" id="8k9-jj-gRb">
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="reloadWithSender:" destination="7bK-6N-ivZ" id="ZqD-d6-aIe"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PUB-q3-b9h" firstAttribute="leading" secondItem="fL5-wE-btx" secondAttribute="leading" id="2CR-2F-FaC"/>
+                            <constraint firstAttribute="trailing" secondItem="Qyu-vQ-noy" secondAttribute="trailing" id="3Qb-L3-JlZ"/>
+                            <constraint firstItem="PUB-q3-b9h" firstAttribute="trailing" secondItem="fL5-wE-btx" secondAttribute="trailing" id="6Wk-Xf-UKI"/>
+                            <constraint firstItem="PUB-q3-b9h" firstAttribute="top" secondItem="fL5-wE-btx" secondAttribute="top" id="GjV-BZ-kDT"/>
+                            <constraint firstItem="Qyu-vQ-noy" firstAttribute="leading" secondItem="qro-tj-aVW" secondAttribute="leading" id="K03-Tt-BFf"/>
+                            <constraint firstItem="Qyu-vQ-noy" firstAttribute="top" secondItem="PUB-q3-b9h" secondAttribute="bottom" id="Rc8-1i-0N8"/>
+                            <constraint firstItem="bUo-II-v50" firstAttribute="leading" secondItem="fL5-wE-btx" secondAttribute="leading" id="uSz-v6-iZx"/>
+                            <constraint firstItem="bUo-II-v50" firstAttribute="bottom" secondItem="fL5-wE-btx" secondAttribute="bottom" id="v0c-Q4-sDt"/>
+                            <constraint firstItem="bUo-II-v50" firstAttribute="trailing" secondItem="fL5-wE-btx" secondAttribute="trailing" id="xoF-4B-ITy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fL5-wE-btx"/>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="oU9-Ka-tOn" id="DSj-bY-RY8"/>
+                        <outlet property="botBar" destination="bUo-II-v50" id="LHa-qF-A4p"/>
+                        <outlet property="forwardButton" destination="ZPd-r5-mpo" id="7cC-e6-fbz"/>
+                        <outlet property="navBar" destination="PUB-q3-b9h" id="1eW-Of-Awj"/>
+                        <outlet property="progressView" destination="Qyu-vQ-noy" id="NzG-fQ-pYE"/>
+                        <outlet property="reloadButton" destination="8k9-jj-gRb" id="svm-NS-Chn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IDt-H7-qFi" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="767" y="-175"/>
+        </scene>
+    </scenes>
+</document>
